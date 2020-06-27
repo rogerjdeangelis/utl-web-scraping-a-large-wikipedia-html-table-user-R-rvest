@@ -134,7 +134,15 @@ Scraping a large wikipedia html table user R rvest
      9    FOUNDED     Char     16    Founded                                                                                                                    
     */                                                                                                                                                          
                                                                                                                                                                 
-                                                                                                                                                                
+    proc datasets lib=work mt=view mt=data;                                                                                                                                                                                                                         
+       delete __ren001 want;                                                                                                                                                                                                                                          
+    run;quit;                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                
+    /* need this if you rerun                                                                                                                                                                                                                                       
+    NOTE: Deleting WORK.__REN001 (memtype=DATA).                                                                                                                                                                                                                    
+    NOTE: Deleting WORK.WANT (memtype=VIEW).                                                                                                                                                                                                                        
+    */            
+                                                                                                                                                            
     data want_log_names; *===> cannot use name want;                                                                                                            
                                                                                                                                                                 
       %utl_rens(xpt.want);                                                                                                                                      
